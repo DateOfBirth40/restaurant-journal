@@ -1,24 +1,21 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import "./App.css";
+import NavbarComponent from "./components/Navbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Row, Col, Button, Alert, Breadcrumb, Card, Form } from 'react-bootstrap'
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-      <h1>Restaurant Journal</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR!
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <NavbarComponent username="DateOfBirth40" />
+      {/* May need to pass in the username and profile picture of a user for Navbar */}
+      <Container className="pt-3">
+        <h1>Restaurant Journal</h1>
+        <p>Have you ever wanted to recommend a restaurant to a friend but couldn't remember what you ordered? With Restaurant Journal, you can keep a shareable log of every restaurant you've been to as well as everything you ordered!</p>
+        <p>Can't remember the name of the restaurant in Valencia that had the best paella you've ever tried? Or maybe that dive bar in Chicago with the deep dish pizza? Not a problem anymore with Restaurant Journal! Using our map feature, you can visualize restaurants that you've visited all around the world!</p>
+        <p>With our customizable privacy features, the choice is yours whether you decide to use this as a personal restaurant log or a fully-fledged social media app.</p>
+      </Container>
     </div>
   );
 }
